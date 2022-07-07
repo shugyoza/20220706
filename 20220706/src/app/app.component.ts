@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 // 3.a. From app.component.ts, pull the json object into a class array called people
 import { Person, people } from './Person.model';
@@ -9,8 +9,8 @@ import { Person, people } from './Person.model';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-  title = '20220706';
+export class AppComponent {
+  title = 'List of People';
 
   // 3.b. pulled here
   people: Person[] = [
@@ -20,12 +20,9 @@ export class AppComponent implements OnInit {
   ]
 
   // 6. add a method to the app.component.ts called deletePerson(id: string) which calls the delete method on the people json object
-  deletePerson(id: string): Person[] {
-    this.people = this.people.filter((document) => document.id !== id);
-    return this.people;
+  deletePerson(id: string, people: Person[]): Person[] {
+    people = people.filter((doc) => doc.id !== id);
+    return people;
   }
 
-  ngOnInit() {
-    console.log('bye')
-  }
 }

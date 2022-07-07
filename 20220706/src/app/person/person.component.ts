@@ -15,6 +15,4 @@ export class PersonComponent {
   // 7. Add an Output EventEmitter field on the person component called deleteMe...
   @Output() deleteMe: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
-
 }

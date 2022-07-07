@@ -12,31 +12,31 @@
     <fieldset>
 
         <div>
-            <label for="input-id">ID: </label>
+            <label for="inputId">ID: </label>
             <input
-                id="input-id"
+                #inputId
                 placeholder="id"
                 formControlName="id"/>
         </div>
 
         <div>
-            <label for="input-firstName">First Name: </label>
+            <label for="inputFirstName">First Name: </label>
             <input
-                id="input-firstName"
+                #inputFirstName
                 placeholder="first name"
                 formControlName="firstName"/>
         </div>
 
         <div>
-            <label for="input-lastName">Last Name: </label>
+            <label for="inputLastName">Last Name: </label>
             <input
-                id="input-lastName"
+                #inputLastName
                 placeholder="last name"
                 formControlName="lastName"/>
         </div>
 
         <button
-            (click)="addPerson()">
+            (click)="addPerson(inputId.value, inputFirstName.value, inputLastName.value, people)">
             Add Person
         </button>
 

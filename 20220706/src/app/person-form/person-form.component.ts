@@ -36,14 +36,15 @@ export class PersonFormComponent {
 
 
     // Bonus Task 4.: Add a method to person-form.component.ts called addPerson() which takes the current value of the personForm and instantiates a new Person
-    addPerson(): void {
+    addPerson(id: string, firstName: string, lastName: string, people: Person[]): Person[] {
         const newPerson: Person = new Person(
-            this.id,
-            this.firstName,
-            this.lastName
+            id,
+            firstName,
+            lastName
         )
-        this.people.push(newPerson);
+        people.push(newPerson);
         this.personForm.reset();
+        return people;
     }
 
 }
