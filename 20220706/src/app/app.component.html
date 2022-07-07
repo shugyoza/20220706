@@ -7,7 +7,7 @@
   <!-- 5. using ngFor, loop through the people array and pass each person to a person component -->
   <!-- 8. On emission of deleteMe from person component, call deletePerson on app.component.ts -->
   <app-person
-    (deleteMe)="deletePerson($event, people)"
+    (deleteMe)="deletePerson($event)"
     *ngFor="let person of people"
     [person]="person"></app-person>
 </router-outlet>

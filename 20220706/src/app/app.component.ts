@@ -20,9 +20,13 @@ export class AppComponent {
   ]
 
   // 6. add a method to the app.component.ts called deletePerson(id: string) which calls the delete method on the people json object
-  deletePerson(id: string, people: Person[]): Person[] {
-    people = people.filter((doc) => doc.id !== id);
-    return people;
+  deletePerson(id: string): Person[] {
+
+    for (let i = 0; i < this.people.length; i++) {
+      let person = this.people[i];
+      if (person.id === id) this.people.splice(i, 1);
+    }
+    return this.people;
   }
 
 }

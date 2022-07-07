@@ -68,30 +68,24 @@ describe('AppComponent', () => {
     expect(app.deletePerson).toBeTruthy();
     expect(typeof app.deletePerson).toEqual('function');
 
-    let list = JSON.parse(JSON.stringify(people));
     let _id = '1';
-    let result = app.deletePerson(_id, list);
-    expect(result).toHaveSize(list.length - 1);
+    let result = app.deletePerson(_id);
     result.forEach((doc) => {
       expect(doc.id).not.toEqual(_id);
     });
 
-    list = JSON.parse(JSON.stringify(people));
     _id = '2';
-    result = app.deletePerson(_id, list);
+    result = app.deletePerson(_id);
     result.forEach((doc) => {
       expect(doc.id).not.toEqual(_id);
     });
 
-    list = JSON.parse(JSON.stringify(people));
     _id = '3';
-    result = app.deletePerson(_id, list);
+    result = app.deletePerson(_id);
     result.forEach((doc) => {
       expect(doc.id).not.toEqual(_id);
     });
-
 
   })
-
 
 });

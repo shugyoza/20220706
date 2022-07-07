@@ -37,6 +37,7 @@ export class PersonFormComponent {
 
     // Bonus Task 4.: Add a method to person-form.component.ts called addPerson() which takes the current value of the personForm and instantiates a new Person
     addPerson(id: string, firstName: string, lastName: string, people: Person[]): Person[] {
+        if (firstName === '' || lastName === '' || id === '') return people;
         const newPerson: Person = new Person(
             id,
             firstName,
