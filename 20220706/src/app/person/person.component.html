@@ -1,0 +1,18 @@
+<fieldset *ngIf="person">
+    <p
+        *ngIf="person.firstName">
+        <label>First Name: </label>
+        <input value={{person.firstName}} />
+    </p>
+    <p
+        *ngIf="person.lastName">
+        <label>Last Name: </label>
+        <input value={{person.lastName}}/>
+    </p>
+    <!-- 7. ...deleteMe, which will send the id of the current people json object -->
+    <button
+        *ngIf="person.id"
+        (click)="deleteMe.emit(person.id)">
+        Delete Me
+    </button>
+</fieldset>
