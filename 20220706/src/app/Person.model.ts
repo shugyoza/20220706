@@ -13,20 +13,8 @@ export class Person {
 }
 
 // 2. Create a JSON object with a list of 3 Persons;
-export const people: Person[] = [
-    {
-        "id": "1",
-        "firstName": "John",
-        "lastName": "Wick"
-    },
-    {
-        "id": "2",
-        "firstName": "Paula",
-        "lastName": "Abdul"
-    },
-    {
-        "id": "3",
-        "firstName": "Rue",
-        "lastName": "Paul"
-    }
+export let people: Person[] = [
+    new Person("1", "John", "Wick"),
+    new Person("2", "Paula", "Abdul"),
+    new Person("3", "Rue", "Paul")
 ]

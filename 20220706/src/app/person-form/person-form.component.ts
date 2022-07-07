@@ -1,6 +1,6 @@
 // Bonus Task 1: Create a new component called person-form
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 import { Person, people } from '../Person.model';
@@ -10,7 +10,9 @@ import { Person, people } from '../Person.model';
     templateUrl: './person-form.component.html',
     styleUrls: ['./person-form.component.css']
 })
-export class PersonFormComponent implements OnInit {
+export class PersonFormComponent {
+
+    @Input() people: Person[] = people;
 
     // Bonust Task 2: Create a reactive form called personForm thas a formGroup that consists of three formControls
     personForm = new FormGroup({
@@ -31,5 +33,17 @@ export class PersonFormComponent implements OnInit {
         return this.personForm.value.lastName;
     }
 
-    ngOnInit() {}
+
+
+    // Bonus Task 4.: Add a method to person-form.component.ts called addPerson() which takes the current value of the personForm and instantiates a new Person
+    addPerson(): void {
+        const newPerson: Person = new Person(
+            this.id,
+            this.firstName,
+            this.lastName
+        )
+        this.people.push(newPerson);
+        this.personForm.reset();
+    }
+
 }

@@ -1,5 +1,5 @@
 // 4. Create a component called person which takes a Person as input and displays the first and last name of the person
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Person } from '../Person.model';
 
@@ -8,7 +8,7 @@ import { Person } from '../Person.model';
   templateUrl: './person.component.html',
   styleUrls: ['./person.component.css']
 })
-export class PersonComponent implements OnInit {
+export class PersonComponent {
 
   @Input() person!: Person;
 
@@ -16,8 +16,5 @@ export class PersonComponent implements OnInit {
   @Output() deleteMe: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

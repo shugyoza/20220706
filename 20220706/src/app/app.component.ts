@@ -13,7 +13,11 @@ export class AppComponent implements OnInit {
   title = '20220706';
 
   // 3.b. pulled here
-  people: Person[] = people;
+  people: Person[] = [
+    new Person("1", "John", "Wick"),
+    new Person("2", "Paula", "Abdul"),
+    new Person("3", "Rue", "Paul")
+  ]
 
   // 6. add a method to the app.component.ts called deletePerson(id: string) which calls the delete method on the people json object
   deletePerson(id: string): Person[] {
@@ -21,6 +25,7 @@ export class AppComponent implements OnInit {
     return this.people;
   }
 
-  ngOnInit(): void { }
-
+  ngOnInit() {
+    console.log('bye')
+  }
 }
