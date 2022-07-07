@@ -1,0 +1,40 @@
+<!-- Bonus Task 3: Create a view for this form in the html of person-form.component.ts that takes the inputs -->
+<div>
+    Your Input:
+    ID: {{id | json}},
+    firstName: {{firstName | json}},
+    lastName: {{lastName | json}}
+</div>
+
+<form
+    [formGroup]="personForm">
+
+    <fieldset>
+
+        <div>
+            <label for="input-id">ID: </label>
+            <input
+                id="input-id"
+                placeholder="id"
+                formControlName="id"/>
+        </div>
+
+        <div>
+            <label for="input-firstName">First Name: </label>
+            <input
+                id="input-firstName"
+                placeholder="first name"
+                formControlName="firstName"/>
+        </div>
+
+        <div>
+            <label for="input-lastName">Last Name: </label>
+            <input
+                id="input-lastName"
+                placeholder="last name"
+                formControlName="lastName"/>
+        </div>
+
+    </fieldset>
+
+</form>

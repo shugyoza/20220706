@@ -16,8 +16,9 @@ export class AppComponent implements OnInit {
   people: Person[] = people;
 
   // 6. add a method to the app.component.ts called deletePerson(id: string) which calls the delete method on the people json object
-  deletePerson(id: string) {
-    console.log('deletePerson()', id)
+  deletePerson(id: string): Person[] {
+    this.people = this.people.filter((document) => document.id !== id);
+    return this.people;
   }
 
   ngOnInit(): void { }

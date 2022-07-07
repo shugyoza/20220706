@@ -10,9 +10,10 @@
         <input value={{person.lastName}}/>
     </p>
     <!-- 7. ...deleteMe, which will send the id of the current people json object -->
+    <!-- 9. Add a button labeled delete on the person component and on click, emit the deleteMe value... -->
     <button
         *ngIf="person.id"
         (click)="deleteMe.emit(person.id)">
-        Delete Me
+        Delete
     </button>
 </fieldset>
